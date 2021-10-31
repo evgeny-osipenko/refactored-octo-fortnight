@@ -1,0 +1,77 @@
+name:                gaem
+version:             0.1.0.0
+github:              "githubuser/gaem"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2021 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/gaem#readme>
+
+default-extensions:
+- ConstraintKinds
+- DataKinds
+- DeriveFunctor
+- DuplicateRecordFields
+- FlexibleContexts
+- FlexibleInstances
+- GADTs
+- ImplicitParams
+- KindSignatures
+- LambdaCase
+- MultiWayIf
+- OverloadedStrings
+- PatternSynonyms
+- PolyKinds
+- QuasiQuotes
+- RecordWildCards
+- RecursiveDo
+- ScopedTypeVariables
+- StandaloneDeriving
+- TypeApplications
+- TypeFamilies
+- TypeFamilyDependencies
+- TypeOperators
+- UndecidableInstances
+
+dependencies:
+- JuicyPixels
+- OpenGL
+- base
+- bytestring
+- containers
+- linear
+- primitive
+- sdl2
+- stm
+- text
+- template-haskell
+- unordered-containers
+- vector
+
+library:
+  source-dirs: src
+
+executables:
+  gaem-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -O2
+    - -Wall
+    dependencies:
+    - gaem
